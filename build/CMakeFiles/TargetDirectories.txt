@@ -1,0 +1,7 @@
+/home/ppq/git/face_recognition/build/CMakeFiles/install/strip.dir
+/home/ppq/git/face_recognition/build/CMakeFiles/edit_cache.dir
+/home/ppq/git/face_recognition/build/CMakeFiles/faceapp.dir
+/home/ppq/git/face_recognition/build/CMakeFiles/rebuild_cache.dir
+/home/ppq/git/face_recognition/build/CMakeFiles/list_install_components.dir
+/home/ppq/git/face_recognition/build/CMakeFiles/install/local.dir
+/home/ppq/git/face_recognition/build/CMakeFiles/install.dir

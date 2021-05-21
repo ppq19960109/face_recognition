@@ -1,0 +1,2 @@
+/home/ppq/git/face_recognition/build/_install/bin/faceapp
+/home/ppq/git/face_recognition/build/_install/include/config.h

@@ -44,19 +44,13 @@ the use of this software, even if advised of the possibility of such damage.
 #define DETECT_BUFFER_SIZE 0x20000
 using namespace cv;
 
-int main(int argc, char* argv[])
+int facedetectcnn_image(const char* image_file_name)
 {
-    if(argc != 2)
-    {
-        printf("Usage: %s <image_file_name>\n", argv[0]);
-        return -1;
-    }
-
 	//load an image and convert it to gray (single-channel)
-	Mat image = imread(argv[1]); 
+	Mat image = imread(image_file_name); 
 	if(image.empty())
 	{
-		fprintf(stderr, "Can not load the image file %s.\n", argv[1]);
+		fprintf(stderr, "Can not load the image file %s.\n", image_file_name);
 		return -1;
 	}
 

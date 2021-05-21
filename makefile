@@ -10,31 +10,32 @@ MKDIR = mkdir -p
 
 TOPDIR = .
 
-SRC_DIRS := $(shell find src -maxdepth 3 -type d)
+SRC_DIRS := $(shell find dlib -maxdepth 3 -type d)
 LIBFACEDETECTION = libfacedetection
 LIBOPENCV = libopencv
+LIBDLIB = libdlib
 
 CFLAGS += $(addprefix -I , $(SRC_DIRS))
 CFLAGS += -I$(LIBFACEDETECTION)/include/facedetection
 CFLAGS += -I$(LIBOPENCV)/include/opencv4
+CFLAGS += -I$(LIBDLIB)/include
 CFLAGS += -Wall
 
 LDFLAGS += -L$(LIBFACEDETECTION)/lib
 LDFLAGS += -L$(LIBOPENCV)/lib
+LDFLAGS += -L$(LIBDLIB)/lib
 LDFLAGS += -L$(TOPDIR)
 
 #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:libopencv/lib
 LIBS += -Wl,--start-group	\
-		-Wl,-Bstatic -lfacedetection \
-		-Wl,-Bdynamic -ldl -lm -lpthread -lrt -lopencv_core -lopencv_imgproc -lopencv_imgcodecs -lopencv_highgui -lopencv_video -lopencv_features2d -lopencv_gapi -lopencv_ml -lopencv_photo \
+		-Wl,-Bstatic -lfacedetection -ldlib \
+		-Wl,-Bdynamic -ldl -lm -lpthread -lrt -lopencv_core -lopencv_imgproc -lopencv_imgcodecs -lopencv_highgui -lopencv_video -lopencv_features2d -lopencv_gapi -lopencv_ml -lopencv_photo -lX11 -lpng \
 		-Wl,--end-group
 
 SRC += $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.cpp))
 
 OBJ += $(SRC:%.cpp=%.o)
 
-%.o : %.c
-	$(CC) $(CFLAGS) -c -o $@ $<
 %.o : %.cpp
 	$(CXX) $(CFLAGS) -c -o $@ $<
 

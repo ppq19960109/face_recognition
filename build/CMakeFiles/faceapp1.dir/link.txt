@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/faceapp1.dir/dlib/face_detection_ex.cpp.o  -o faceapp1  -L/home/ppq/git/face_recognition/libdlib/lib -Wl,-rpath,/home/ppq/git/face_recognition/libdlib/lib: -ldl -lm -lpthread -lrt -ldlib -lX11 -lpng 

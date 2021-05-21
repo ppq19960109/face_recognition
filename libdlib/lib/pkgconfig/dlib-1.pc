@@ -1,0 +1,8 @@
+libdir=/home/ppq/git/dlib/_install/lib
+includedir=/home/ppq/git/dlib/_install/include
+
+Name: dlib
+Description: Numerical and networking C++ library
+Version: 19.22.99
+Libs: -L${libdir} -ldlib -lpthread /usr/lib/x86_64-linux-gnu/libSM.so /usr/lib/x86_64-linux-gnu/libICE.so /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so /usr/lib/x86_64-linux-gnu/libpng.so /usr/lib/x86_64-linux-gnu/libz.so
+Cflags: -I${includedir} 
